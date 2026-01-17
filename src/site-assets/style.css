@@ -1,0 +1,145 @@
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --link-color: #0066cc;
+    --card-bg: #ffffff;
+    --border-color: #e9ecef;
+    --muted-text: #6c757d;
+    --primary-color: #2c3e50;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --font-sans:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, sans-serif;
+    --font-serif: Georgia, "Times New Roman", Times, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #e9ecef;
+        --link-color: #58a6ff;
+        --card-bg: #1e1e1e;
+        --border-color: #333;
+        --muted-text: #adb5bd;
+        --primary-color: #e9ecef;
+        --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+}
+
+h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Search Box */
+#search-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    box-sizing: border-box; /* Important for padding */
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+/* List of Laws */
+#law-list {
+    list-style: none;
+    padding: 0;
+}
+
+.law-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.1s;
+    box-shadow: var(--shadow);
+}
+
+.law-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--link-color);
+}
+
+.law-title {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.law-meta {
+    font-size: 0.9rem;
+    color: var(--muted-text);
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+/* Law Document Content */
+.law-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    font-family: var(--font-serif);
+}
+
+.law-content h1,
+.law-content h2,
+.law-content h3 {
+    font-family: var(--font-sans);
+    margin-top: 2rem;
+    color: var(--primary-color);
+}
+
+/* Fix for pre-generated HTML oddities if any */
+.law-content a {
+    color: var(--link-color);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--muted-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.back-link:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
