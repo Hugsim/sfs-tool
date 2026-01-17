@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svensk Författningssamling (SFS)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="index.html">Svensk Författningssamling</a></h1>
+            <p>Sökbart register över svenska lagar och förordningar.</p>
+        </header>
+        
+        <main>
+            <input type="text" id="search-input" placeholder="Sök på titel, år eller SFS-nummer (t.ex. 1999:175)..." autofocus>
+            
+            <ul id="law-list">
+                <!-- Populated by search.js -->
+                <li style="text-align:center; padding: 2rem; color: #666;">Laddar register...</li>
+            </ul>
+        </main>
+    </div>
+
+    <script src="search-index.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
