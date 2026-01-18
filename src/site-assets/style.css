@@ -1,4 +1,5 @@
 :root {
+    /* Base Theme (Light) */
     --bg-color: #f8f9fa;
     --text-color: #212529;
     --link-color: #0066cc;
@@ -7,23 +8,34 @@
     --muted-text: #6c757d;
     --primary-color: #2c3e50;
     --shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    /* Fonts */
     --font-sans:
         -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
         Arial, sans-serif;
     --font-serif: Georgia, "Times New Roman", Times, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #121212;
-        --text-color: #e9ecef;
-        --link-color: #58a6ff;
-        --card-bg: #1e1e1e;
-        --border-color: #333;
-        --muted-text: #adb5bd;
-        --primary-color: #e9ecef;
-        --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e9ecef;
+    --link-color: #58a6ff;
+    --card-bg: #1e1e1e;
+    --border-color: #333;
+    --muted-text: #adb5bd;
+    --primary-color: #e9ecef;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="sepia"] {
+    --bg-color: #f4ecd8;
+    --text-color: #433422;
+    --link-color: #a05a2c;
+    --card-bg: #fffdf6;
+    --border-color: #d7c4a1;
+    --muted-text: #7b6a55;
+    --primary-color: #5b4636;
+    --shadow: 0 2px 4px rgba(67, 52, 34, 0.1);
 }
 
 body {
