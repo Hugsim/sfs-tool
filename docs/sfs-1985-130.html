@@ -9,17 +9,33 @@ enligt Haagkonventionen den 18 mars 1970 om bevisupptagning i
 utlandet i mål och ärenden av civil eller kommersiell natur
  - SFS sfs-1985-130</title>
     <link rel="stylesheet" href="style.css">
+    <script src="theme.js"></script>
 </head>
 <body>
     <div class="container">
         <a href="index.html" class="back-link">← Tillbaka till sök</a>
         
         <header>
-            <h1>Föreskrifter (1985:130) om förfarandet vid 
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <h1>Föreskrifter (1985:130) om förfarandet vid 
 översändande av framställning om bevisupptagning
 enligt Haagkonventionen den 18 mars 1970 om bevisupptagning i
 utlandet i mål och ärenden av civil eller kommersiell natur
 </h1>
+                <select onchange="window.setTheme(this.value)" style="padding: 0.5rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color);">
+                    <option value="light">Ljust läge</option>
+                    <option value="dark">Mörkt läge</option>
+                    <option value="sepia">Sepia</option>
+                </select>
+                <script>
+                    (function() {
+                        const saved = localStorage.getItem("theme");
+                        const sel = document.currentScript.previousElementSibling;
+                        if(saved) sel.value = saved;
+                        else if(window.matchMedia("(prefers-color-scheme: dark)").matches) sel.value = "dark";
+                    })();
+                </script>
+            </div>
             <div class="meta-info">
                 <span><strong>SFS:</strong> 1985:130</span> •
                 <span><strong>Utfärdad:</strong> 1985-03-13</span>

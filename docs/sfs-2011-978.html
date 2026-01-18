@@ -5,13 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Förordning (2011:978) om avgifter för vissa ärenden om dödande av förkommen handling - SFS sfs-2011-978</title>
     <link rel="stylesheet" href="style.css">
+    <script src="theme.js"></script>
 </head>
 <body>
     <div class="container">
         <a href="index.html" class="back-link">← Tillbaka till sök</a>
         
         <header>
-            <h1>Förordning (2011:978) om avgifter för vissa ärenden om dödande av förkommen handling</h1>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <h1>Förordning (2011:978) om avgifter för vissa ärenden om dödande av förkommen handling</h1>
+                <select onchange="window.setTheme(this.value)" style="padding: 0.5rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color);">
+                    <option value="light">Ljust läge</option>
+                    <option value="dark">Mörkt läge</option>
+                    <option value="sepia">Sepia</option>
+                </select>
+                <script>
+                    (function() {
+                        const saved = localStorage.getItem("theme");
+                        const sel = document.currentScript.previousElementSibling;
+                        if(saved) sel.value = saved;
+                        else if(window.matchMedia("(prefers-color-scheme: dark)").matches) sel.value = "dark";
+                    })();
+                </script>
+            </div>
             <div class="meta-info">
                 <span><strong>SFS:</strong> 2011:978</span> •
                 <span><strong>Utfärdad:</strong> 2011-08-25</span>

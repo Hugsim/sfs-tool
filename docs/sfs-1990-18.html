@@ -7,15 +7,31 @@
 vid myndigheter som hör till försvarsdepartementet
  - SFS sfs-1990-18</title>
     <link rel="stylesheet" href="style.css">
+    <script src="theme.js"></script>
 </head>
 <body>
     <div class="container">
         <a href="index.html" class="back-link">← Tillbaka till sök</a>
         
         <header>
-            <h1>Förordning (1990:18) om indragning av vissa tjänster 
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <h1>Förordning (1990:18) om indragning av vissa tjänster 
 vid myndigheter som hör till försvarsdepartementet
 </h1>
+                <select onchange="window.setTheme(this.value)" style="padding: 0.5rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--card-bg); color: var(--text-color);">
+                    <option value="light">Ljust läge</option>
+                    <option value="dark">Mörkt läge</option>
+                    <option value="sepia">Sepia</option>
+                </select>
+                <script>
+                    (function() {
+                        const saved = localStorage.getItem("theme");
+                        const sel = document.currentScript.previousElementSibling;
+                        if(saved) sel.value = saved;
+                        else if(window.matchMedia("(prefers-color-scheme: dark)").matches) sel.value = "dark";
+                    })();
+                </script>
+            </div>
             <div class="meta-info">
                 <span><strong>SFS:</strong> 1990:18</span> •
                 <span><strong>Utfärdad:</strong> 1990-02-01</span>
